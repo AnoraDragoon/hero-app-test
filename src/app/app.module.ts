@@ -8,10 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { HeroListComponent } from './components/hero-list/hero-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroListComponent
   ],
   imports: [
     BrowserModule,
