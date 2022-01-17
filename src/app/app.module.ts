@@ -11,13 +11,15 @@ import { MatInputModule } from '@angular/material/input';
 import { HeroListComponent } from './components/hero-list/hero-list.component';
 import { HeroFormComponent } from './components/hero-form/hero-form.component';
 import { OptionsPanelComponent } from './components/options-panel/options-panel.component';
+import { HeroesPageComponent } from './components/heroes-page/heroes-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroListComponent,
     HeroFormComponent,
-    OptionsPanelComponent
+    OptionsPanelComponent,
+    HeroesPageComponent
   ],
   imports: [
     BrowserModule,
