@@ -17,8 +17,10 @@ import { HeroFormComponent } from './components/hero-form/hero-form.component';
 import { OptionsPanelComponent } from './components/options-panel/options-panel.component';
 import { HeroesPageComponent } from './components/heroes-page/heroes-page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
+import { FilterHeroPipe } from './pipes/filter-hero.pipe';
+import { PaginationPipe } from './pipes/pagination.pipe';
 
 
 @NgModule({
@@ -29,12 +31,15 @@ import { HeroDetailsComponent } from './components/hero-details/hero-details.com
         OptionsPanelComponent,
         HeroesPageComponent,
         PageNotFoundComponent,
-        HeroDetailsComponent
+        HeroDetailsComponent,
+        FilterHeroPipe,
+        PaginationPipe
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        FormsModule,
         ReactiveFormsModule,
         MatSliderModule,
         MatFormFieldModule,

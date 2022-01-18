@@ -1,8 +1,9 @@
 <mat-selection-list #shoes [multiple]="false" (selectionChange)="select($event)">
-  <mat-list-option *ngFor="let hero of heroes" [value]="hero">
+  <mat-list-option *ngFor="let hero of heroes | slice: (pageIndex * pageSize): (pageIndex + 1) * pageSize"
+    [value]="hero">
     {{hero.id}} {{hero.name}} {{hero.age}}
   </mat-list-option>
 </mat-selection-list>
-<mat-paginator [length]="heroes.length" [pageIndex]="pageIndex" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25]"
-  aria-label="Select page">
+<mat-paginator [length]="heroes.length" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 25]"
+  aria-label="Select page" (page)="page($event)">
 </mat-paginator>

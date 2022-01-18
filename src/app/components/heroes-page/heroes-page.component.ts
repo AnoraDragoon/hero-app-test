@@ -23,16 +23,20 @@ export class HeroesPageComponent implements OnInit {
         this.getHeroes();
     }
 
-    reloadHeroes(): void {
-        this.getHeroes({ search: this.search, filter: this.filter });
-    }
+    // reloadHeroes(): void {
+    //     this.getHeroes({ search: this.search, filter: this.filter });
+    // }
 
     select(event: Hero): void {
         this.selectedId = event.id;
     }
 
-    private getHeroes(match?: Match): void {
-        this.heroService.getHeroes(match)
-            .subscribe((heroes: Hero[]) => this.heroes = heroes)
+    find($event: string): void {
+        this.search = $event;
+    }
+
+    private getHeroes(): void {
+        this.heroService.getHeroes()
+            .subscribe((heroes: Hero[]) => { this.heroes = heroes; });
     }
 }

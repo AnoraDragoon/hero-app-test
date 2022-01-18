@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatSelectionListChange } from '@angular/material/list';
+import { PageEvent } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
 import { Hero } from 'src/app/models/hero';
 
@@ -21,15 +22,21 @@ export class HeroListComponent {
 
     constructor() { }
 
-    load(heroes: Hero[], pageIndex: number, pageSize: number) {
-        const elements: Hero[] = [];
-        for (let index = pageIndex; index < pageIndex + pageSize && index < heroes.length; index++) {
-            elements.push(this.heroes[index]);
-        }
-        return elements;
-    }
+    // load(heroes: Hero[], pageIndex: number, pageSize: number) {
+    //     const elements: Hero[] = [];
+    //     for (let index = pageIndex; index < pageIndex + pageSize && index < heroes.length; index++) {
+    //         elements.push(this.heroes[index]);
+    //     }
+    //     return elements;
+    // }
 
     select(event: MatSelectionListChange) {
         this.selectionChange.emit(event.options[0].value);
+    }
+
+    page(event: PageEvent) {
+        this.pageIndex = event.pageIndex;
+        this.pageSize = event.pageSize;
+        console.log(event);
     }
 }

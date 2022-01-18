@@ -14,23 +14,20 @@ export class HeroService {
 
     constructor() { }
 
-    getHeroes(match?: Match): Observable<Hero[]> {
-        let heroes: Hero[];
+    getHeroes(): Observable<Hero[]> {
+        // let heroes: Hero[];
 
-        const search: string = match !== undefined && match.search !== undefined ? match.search : '';
-        heroes = search ? this.heroes.filter((hero: Hero) => hero.name.includes(search)) : this.heroes;
+        // const search: string = match !== undefined && match.search !== undefined ? match.search : '';
+        // heroes = search ? this.heroes.filter((hero: Hero) => hero.name.includes(search)) : this.heroes;
 
-        const filter: number = match !== undefined && match.filter !== undefined ? match.filter : 0;
-        heroes = filter ? heroes.filter((hero: Hero) => hero.name.includes(search)) : heroes;
+        // const filter: number = match !== undefined && match.filter !== undefined ? match.filter : 0;
+        // heroes = filter ? heroes.filter((hero: Hero) => hero.name.includes(search)) : heroes;
 
-        return of(heroes);
+        return of(this.heroes);
     }
 
     public getHero(id: number): Hero | undefined {
-        console.dir(typeof id);
-        console.log(this.heroes);
         const hero = this.heroes.find((hero: Hero) => hero.id === id);
-        console.log(hero);
         return hero;
     }
 
@@ -66,7 +63,7 @@ export class HeroService {
         const index = this.heroes.indexOf(result);
 
         if (index || index >= 0) {
-            this.heroes.slice(index, 1);
+            this.heroes.splice(index, 1);
             return of(true);
         }
         return of(false);

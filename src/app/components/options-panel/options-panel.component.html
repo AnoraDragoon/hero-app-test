@@ -2,5 +2,11 @@
   <button mat-flat-button color="primary" routerLink="/hero/new">Añadir</button>
   <button mat-flat-button color="primary" routerLink="/hero/{{heroID}}/edit"
     [disabled]="heroID && heroID >= 0 ? false : true">Editar</button>
-  <button mat-flat-button color="warn" [disabled]="heroID && heroID >= 0 ? false : true">Eliminar</button>
+  <button mat-flat-button color="warn" [disabled]="heroID && heroID >= 0 ? false : true"
+    (click)="confirm(heroID)">Eliminar</button>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Buscar</mat-label>
+    <input matInput type="text" [(ngModel)]="searchParam" (keyup.enter)="search()">
+  </mat-form-field>
 </div>
