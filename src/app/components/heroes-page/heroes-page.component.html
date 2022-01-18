@@ -1,3 +1,10 @@
 <app-options-panel [heroID]="selectedId" (onSearch)="find($event)"></app-options-panel>
+<mat-form-field appearance="fill">
+  <mat-label>Filtro de edad</mat-label>
+  <mat-select [(ngModel)]="filter">
+    <mat-option [value]="undefined">Select</mat-option>
+    <mat-option *ngFor="let age of ages" [value]="age">{{age}}</mat-option>
+  </mat-select>
+</mat-form-field>
 <app-hero-list [heroes]="heroes | filterHero: search: filter" (selectionChange)="select($event)"></app-hero-list>
 <app-hero-details [heroID]="selectedId"></app-hero-details>

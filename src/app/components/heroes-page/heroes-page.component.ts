@@ -11,6 +11,7 @@ import { HeroService } from 'src/app/services/hero.service';
 export class HeroesPageComponent implements OnInit {
 
     public heroes: Hero[] = [];
+    public ages: number[] = [];
     public selectedId: number = -1;
 
     public search?: string;
@@ -21,6 +22,7 @@ export class HeroesPageComponent implements OnInit {
 
     ngOnInit(): void {
         this.getHeroes();
+        this.getAges();
     }
 
     // reloadHeroes(): void {
@@ -38,5 +40,10 @@ export class HeroesPageComponent implements OnInit {
     private getHeroes(): void {
         this.heroService.getHeroes()
             .subscribe((heroes: Hero[]) => { this.heroes = heroes; });
+    }
+
+    private getAges(): void {
+        this.heroService.getAges()
+            .subscribe((ages: number[]) => { this.ages = ages; });
     }
 }

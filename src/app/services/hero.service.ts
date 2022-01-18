@@ -26,6 +26,15 @@ export class HeroService {
         return of(this.heroes);
     }
 
+    public getAges(): Observable<number[]> {
+        const result = this.heroes.map((hero: Hero) => hero.age);
+        return of(result.filter(this.onlyUnique));
+    }
+
+    private onlyUnique(value: unknown, index: number, self: unknown[]) {
+        return self.indexOf(value) === index;
+    }
+
     public getHero(id: number): Hero | undefined {
         const hero = this.heroes.find((hero: Hero) => hero.id === id);
         return hero;

@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
 import { FilterHeroPipe } from './pipes/filter-hero.pipe';
 import { PaginationPipe } from './pipes/pagination.pipe';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { PaginationPipe } from './pipes/pagination.pipe';
         MatListModule,
         MatPaginatorModule,
         MatButtonModule,
+        MatSelectModule
     ],
     providers: [],
     bootstrap: [AppComponent]
