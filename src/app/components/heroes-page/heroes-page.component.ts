@@ -25,10 +25,6 @@ export class HeroesPageComponent implements OnInit {
         this.getAges();
     }
 
-    // reloadHeroes(): void {
-    //     this.getHeroes({ search: this.search, filter: this.filter });
-    // }
-
     select(event: Hero): void {
         this.selectedId = event.id;
     }

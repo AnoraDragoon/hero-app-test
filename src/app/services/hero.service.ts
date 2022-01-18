@@ -15,14 +15,6 @@ export class HeroService {
     constructor() { }
 
     getHeroes(): Observable<Hero[]> {
-        // let heroes: Hero[];
-
-        // const search: string = match !== undefined && match.search !== undefined ? match.search : '';
-        // heroes = search ? this.heroes.filter((hero: Hero) => hero.name.includes(search)) : this.heroes;
-
-        // const filter: number = match !== undefined && match.filter !== undefined ? match.filter : 0;
-        // heroes = filter ? heroes.filter((hero: Hero) => hero.name.includes(search)) : heroes;
-
         return of(this.heroes);
     }
 
@@ -41,7 +33,6 @@ export class HeroService {
     }
 
     add(hero: Hero): Observable<void> {
-        console.log(hero);
         const index: number = this.heroes.length > 0 ? this.heroes.length - 1 : 0;
         const id = this.heroes[index].id + 1;
         const newHero = {
@@ -50,7 +41,6 @@ export class HeroService {
             age: hero.age
         };
         this.heroes.push(newHero);
-        console.log(this.heroes);
         return of();
     }
 
