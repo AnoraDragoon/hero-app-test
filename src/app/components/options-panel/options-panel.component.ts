@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class OptionsPanelComponent {
 
-    @Input() heroID: number;
+    @Input() heroID: number = -1;
 
 
     constructor() { }
