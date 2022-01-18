@@ -17,6 +17,7 @@ import { HeroFormComponent } from './components/hero-form/hero-form.component';
 import { OptionsPanelComponent } from './components/options-panel/options-panel.component';
 import { HeroesPageComponent } from './components/heroes-page/heroes-page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        ReactiveFormsModule,
         MatSliderModule,
         MatFormFieldModule,
         MatInputModule,

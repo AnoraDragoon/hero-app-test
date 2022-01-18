@@ -1,6 +1,6 @@
 <div class="example-button-row">
   <button mat-flat-button color="primary" routerLink="/hero/new">Añadir</button>
-  <button mat-flat-button color="primary" routerLink="hero/{{heroID}}/edit"
+  <button mat-flat-button color="primary" routerLink="/hero/{{heroID}}/edit"
     [disabled]="heroID && heroID >= 0 ? false : true">Editar</button>
   <button mat-flat-button color="warn" [disabled]="heroID && heroID >= 0 ? false : true">Eliminar</button>
 </div>

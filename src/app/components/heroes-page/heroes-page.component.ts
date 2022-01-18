@@ -27,6 +27,10 @@ export class HeroesPageComponent implements OnInit {
         this.getHeroes({ search: this.search, filter: this.filter });
     }
 
+    select(event: Hero): void {
+        this.selectedId = event.id;
+    }
+
     private getHeroes(match?: Match): void {
         this.heroService.getHeroes(match)
             .subscribe((heroes: Hero[]) => this.heroes = heroes)

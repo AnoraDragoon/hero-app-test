@@ -26,7 +26,16 @@ export class HeroService {
         return of(heroes);
     }
 
+    public getHero(id: number): Hero | undefined {
+        console.dir(typeof id);
+        console.log(this.heroes);
+        const hero = this.heroes.find((hero: Hero) => hero.id === id);
+        console.log(hero);
+        return hero;
+    }
+
     add(hero: Hero): Observable<void> {
+        console.log(hero);
         const index: number = this.heroes.length > 0 ? this.heroes.length - 1 : 0;
         const id = this.heroes[index].id + 1;
         const newHero = {
@@ -35,6 +44,7 @@ export class HeroService {
             age: hero.age
         };
         this.heroes.push(newHero);
+        console.log(this.heroes);
         return of();
     }
 

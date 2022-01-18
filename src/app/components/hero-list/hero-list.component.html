@@ -1,5 +1,5 @@
-<mat-selection-list #shoes [multiple]="false">
-  <mat-list-option *ngFor="let hero of load(heroes, pageIndex, pageSize)" [value]="hero">
+<mat-selection-list #shoes [multiple]="false" (selectionChange)="select($event)">
+  <mat-list-option *ngFor="let hero of heroes" [value]="hero">
     {{hero.id}} {{hero.name}} {{hero.age}}
   </mat-list-option>
 </mat-selection-list>

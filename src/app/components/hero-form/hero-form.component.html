@@ -1,7 +1,17 @@
-<form action="">
+<form class="example-form" [formGroup]="form">
   <h1>Insert new Hero</h1>
-  <mat-form-field appearance="fill">
-    <mat-label>Input</mat-label>
-    <input matInput>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Hero Name</mat-label>
+    <input matInput formControlName="name">
   </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Hero Age</mat-label>
+    <input matInput type="number" formControlName="age">
+  </mat-form-field>
+
+
+  <div class="example-full-width" appearance="fill">
+    <button mat-flat-button color="primary" (click)="save()">Primary</button>
+  </div>
 </form>

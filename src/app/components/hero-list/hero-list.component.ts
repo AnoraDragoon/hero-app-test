@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatSelectionListChange } from '@angular/material/list';
 import { Observable } from 'rxjs';
 import { Hero } from 'src/app/models/hero';
 
@@ -14,6 +15,7 @@ export class HeroListComponent {
 
     public pageSize = 10;
     public pageIndex = 0;
+    @Output() selectionChange: EventEmitter<Hero> = new EventEmitter;
 
 
 
@@ -25,5 +27,9 @@ export class HeroListComponent {
             elements.push(this.heroes[index]);
         }
         return elements;
+    }
+
+    select(event: MatSelectionListChange) {
+        this.selectionChange.emit(event.options[0].value);
     }
 }
